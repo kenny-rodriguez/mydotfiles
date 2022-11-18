@@ -2,20 +2,22 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor VGA-1 -d Main1
-bspc monitor HDMI-1 -d Main2 3 4
+bspc monitor DisplayPort-1 -d M1
+bspc monitor DisplayPort-2 -d M2
+bspc monitor HDMI-A-0 -d TV
 
-bspc config border_width 2
-bspc config window_gap 12
+bspc config border_width         2
+bspc config window_gap          12
 
-bspc config split_ratio 0.52
-bspc config borderless_monacle true
-bspc config gapless_monacle true
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
 
-xrdb -merge ~/.Xresources
-
-picom -b &
-feh --no-fehbg --bg-fill /usr/share/backgrounds/DesktopBackground1.jpg /usr/share/backgrounds/DesktopBackground2.jpg &
-tint2 &
+picom -b
+pcmanfm --desktop & disown
 nm-applet &
 pasystray &
+tint2 &
+
+
+bspc rule -a URxvt state=floating
