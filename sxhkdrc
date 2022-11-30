@@ -1,0 +1,60 @@
+# TERMINAL
+alt + Return
+	urxvt
+alt + shift + Return
+    urxvt -e ranger
+# APPLICATION LAUNCHER
+alt + d
+	rofi -show drun -show-icons -monitor ^1
+
+# RESET HOTKEYS
+alt + shift + k
+	pkill -USR1 -x sxhkd
+
+# EXIT / RESTART WM
+alt + shift + {e,r}
+	bspc {quit,wm -r}
+
+# OPEN PYTHON
+alt + p
+    urxvt -e python
+
+# WEB BROWSER
+alt + o
+	qutebrowser
+
+# GOOGLE CHROME KENNY
+alt + shift + o
+    google-chrome-stable --user-data-dir=/home/teacher/.config/google-chrome/google-chrome-kenny
+
+# GOOGLE CHROME RSM
+alt + shift + u
+    google-chrome-stable --user-data-dir=/home/teacher/.config/google-chrome/google-chrome-rsm
+
+# FILE BROWSER
+alt + shift + f
+	pcmanfm
+
+# CLOSE WINDOW
+alt + shift + q
+	bspc node -c
+
+# WINDOW MODE
+alt + {s,t,f}
+	bspc node --state {floating,tiled,fullscreen}
+
+# CHANGING FOCUS
+alt + {h,j,k,l}
+	bspc node {west,south,north,east} -f
+
+# CHANGE MONITORS
+alt + shift + {1,2,3}
+	bspc node -m {^1,^2,^3}
+
+# SWAP NODES
+alt + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+# FOCUS MONITOR
+alt + {1,2,3}
+	bspc monitor {^1,^2,^3} -f
